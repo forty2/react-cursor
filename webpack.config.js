@@ -27,8 +27,14 @@ module.exports = {
 
   module: {
     loaders: [
-      {test: /\.js$/, loaders: ['babel'], include: path.resolve('./src')},
-      {test: /node_modules\/update-in/, loader: 'babel'}
+      {
+        test: /\.js$/,
+        loaders: ['babel'],
+        include: [
+            path.resolve('./src'),
+            path.resolve('./node_modules/update-in')
+        ]
+      }
     ]
   }
 };
